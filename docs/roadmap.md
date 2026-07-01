@@ -16,7 +16,8 @@
 
 - [ ] Add environment configuration
 - [ ] Add OpenAI API key handling
-- [ ] Create AI service/client
+- [x] Create AI service/client
+- [x] Create prompt management
 - [ ] Connect LetterService to AI provider
 - [ ] Improve prompt structure
 - [ ] Return structured AI response

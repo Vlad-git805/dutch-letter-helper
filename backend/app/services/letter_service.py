@@ -1,8 +1,25 @@
+from app.ai.client import AIClient
+from app.ai.prompts import DUTCH_LETTER_ANALYSIS_PROMPT
+
+
 class LetterService:
+    def __init__(self):
+        self.ai_client = AIClient()
+
     def analyze(self, text: str, tone: str = "polite") -> dict:
+        user_message = f"""
+            Letter text:
+            {text}
+
+            Preferred reply tone:
+            {tone}
+            """
+
+        ai_response = self.ai_client.generate_response(
+            system_prompt=DUTCH_LETTER_ANALYSIS_PROMPT,
+            user_message=user_message
+        )
+
         return {
-            "summary": "This is a test analysis.",
-            "detected_tone": tone,
-            "original_text": text,
-            "message": "LetterService is working!"
+            "analysis": ai_response
         }
