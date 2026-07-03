@@ -1,44 +1,74 @@
 # Dutch Letter Helper
 
-Dutch Letter Helper is an AI assistant that helps Ukrainian speakers in the Netherlands understand Dutch letters, emails, and official messages.
+![Python](https://img.shields.io/badge/Python-3.13-blue)
 
-## MVP Goal
+![FastAPI](https://img.shields.io/badge/FastAPI-0.116-green)
 
-The first version will allow users to paste a Dutch letter and receive:
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4.1-black)
 
-- a simple Ukrainian explanation
-- important dates or required actions
-- a suggested Dutch reply
-- tone selection for the reply
+![Status](https://img.shields.io/badge/status-in%20development-orange)
 
-## Tech Stack
+AI-powered web application that helps Ukrainian users understand, analyze and generate Dutch letters.
 
-- Backend: Python, FastAPI
-- Frontend: React, Vite
-- AI: OpenAI API
-- Database: planned
-- Deployment: planned
+---
 
-## Current Architecture
+## Features
 
-Frontend
+### ✅ Implemented
 
-↓
+- FastAPI backend
+- REST API
+- Modular backend architecture
+- OpenAI API integration
+- AI Client abstraction
+- Environment configuration (.env)
+- Prompt management
+- Service Layer architecture
 
-Backend API
+### 🚧 Planned
 
-↓
+- React frontend
+- Letter generation
+- Letter improvement
+- Translation
+- Authentication
+- History of analyzed letters
+- Docker support
 
-Service Layer
+---
 
-↓
+## Project Structure
 
-AI Provider
+backend/
+frontend/
+docs/
 
-## Project Status
+---
 
-- Backend foundation: in progress
-- AI integration: planned
-- Frontend: planned
-- Database: planned
-- Authentication: planned
+## Technologies
+
+Backend
+
+- Python 3.13
+- FastAPI
+- OpenAI SDK
+- Pydantic
+- Uvicorn
+
+Frontend (planned)
+
+- React
+- TypeScript
+- Vite
+
+---
+
+## Documentation
+
+See the `/docs` directory.
+
+---
+
+## Author
+
+Vladyslav Zhomyruk

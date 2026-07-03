@@ -2,50 +2,112 @@
 
 ## Current Architecture
 
-```text
-Browser
-    │
-    ▼
-FastAPI Router
-    │
-    ▼
-LetterService
-    │
-    ├────────────► prompts.py
-    │
-    ▼
-AIClient
-    │
-    ▼
-(OpenAI - coming soon)
-```
+                Browser
+                    │
+                    ▼
+              FastAPI Router
+                    │
+                    ▼
+             LetterService
+                    │
+                    ▼
+               AI Client
+                    │
+                    ▼
+             OpenAI SDK
+                    │
+                    ▼
+              OpenAI API
 
 ## Responsibilities
 
-### api/
+### Api/
 
-HTTP layer.
+Responsible for HTTP requests.
 
-Receives requests and returns responses.
-
-### services/
+### Services/
 
 Business logic.
 
-Knows how to analyze Dutch letters.
+### Ai/
 
-### ai/
+Communication with OpenAI.
 
-Responsible for communication with AI providers.
+### Schemas/
 
-### prompts.py
+Request and Response models.
 
-Stores AI prompts.
-
-### client.py
-
-Communicates with AI providers.
-
-### core/
+### Core/
 
 Application configuration.
+
+### Utils/
+
+Helper functions.
+
+### Request Flow
+
+Client
+
+↓
+
+FastAPI Router
+
+↓
+
+LetterService
+
+↓
+
+AIClient
+
+↓
+
+OpenAI API
+
+↓
+
+AIClient
+
+↓
+
+LetterService
+
+↓
+
+Router
+
+↓
+
+JSON Response
+
+### Dependency Direction
+
+Router
+
+↓
+
+Service
+
+↓
+
+AI Client
+
+↓
+
+OpenAI SDK
+
+### Project Structure
+
+backend/
+├── app/
+│   ├── api/
+│   ├── ai/
+│   ├── core/
+│   ├── models/
+│   ├── schemas/
+│   ├── services/
+│   ├── utils/
+│   └── main.py
+├── .env.example
+└── requirements.txt
