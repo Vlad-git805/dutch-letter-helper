@@ -1,47 +1,45 @@
 # Roadmap
 
-## Phase 1 — Foundation
+## Phase 1 — Project Setup ✅
 
-- [x] Create project structure
-- [x] Initialize Git and GitHub
-- [x] Set up Python virtual environment
-- [x] Set up FastAPI backend
-- [x] Add health endpoint
-- [x] Add letter request schema
-- [x] Add letters router
-- [x] Add letter service layer
-- [x] Add documentation structure
+- [x] GitHub repository
+- [x] Python project
+- [x] FastAPI
+- [x] Project architecture
+- [x] Documentation
 
-## Phase 2 — AI Integration
+---
 
-- [ ] Add environment configuration
-- [ ] Add OpenAI API key handling
-- [x] Create AI service/client
-- [x] Create prompt management
-- [ ] Connect LetterService to AI provider
-- [ ] Improve prompt structure
-- [ ] Return structured AI response
+## Phase 2 — AI Backend ✅
 
-## Phase 3 — Frontend
+- [x] OpenAI SDK
+- [x] AI Client
+- [x] Prompt management
+- [x] Environment configuration
+- [x] Letter analysis endpoint
 
-- [ ] Set up React + Vite
-- [ ] Create letter input form
-- [ ] Add tone selector
-- [ ] Call backend API
-- [ ] Display analysis result
+---
 
-## Phase 4 — Product Features
+## Phase 3 — AI Improvements
 
-- [ ] Upload PDF or image
-- [ ] Save analysis history
-- [ ] Add user accounts
-- [ ] Add database
-- [ ] Add payments or usage limits
+- [ ] Better prompts
+- [ ] Structured AI responses
+- [ ] Error handling
+- [ ] Logging
+- [ ] Unit tests
+
+---
+
+## Phase 4 — Frontend
+
+- [ ] React
+- [ ] UI
+- [ ] API integration
+
+---
 
 ## Phase 5 — Production
 
-- [ ] Add tests
-- [ ] Add Docker
-- [ ] Deploy backend
-- [ ] Deploy frontend
-- [ ] Add logging and monitoring
+- [ ] Docker
+- [ ] CI/CD
+- [ ] Deployment

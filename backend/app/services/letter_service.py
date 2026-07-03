@@ -1,12 +1,13 @@
 from app.ai.client import AIClient
 from app.ai.prompts import DUTCH_LETTER_ANALYSIS_PROMPT
+from app.schemas.letter import LetterAnalyzeResponse
 
 
 class LetterService:
     def __init__(self):
         self.ai_client = AIClient()
 
-    def analyze(self, text: str, tone: str = "polite") -> dict:
+    def analyze(self, text: str, tone: str = "polite") -> LetterAnalyzeResponse:
         user_message = f"""
             Letter text:
             {text}
@@ -20,6 +21,6 @@ class LetterService:
             user_message=user_message
         )
 
-        return {
-            "analysis": ai_response
-        }
+        return LetterAnalyzeResponse(
+            analysis=ai_response
+        )
