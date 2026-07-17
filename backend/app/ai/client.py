@@ -4,6 +4,8 @@ from app.core.settings import settings
 
 from app.ai.exceptions import AIClientError
 
+from app.schemas.letter import LetterAnalyzeResponse
+
 
 class AIClient:
     def __init__(self):
@@ -14,16 +16,22 @@ class AIClient:
     self,
     system_prompt: str,
     user_message: str,
-    ) -> str:
+    ) -> LetterAnalyzeResponse:
         try:
-            response = self.client.responses.create(
+            response = self.client.responses.parse(
                 model=settings.OPENAI_MODEL,
                 temperature=settings.OPENAI_TEMPERATURE,
                 instructions=system_prompt,
                 input=user_message,
+                text_format=LetterAnalyzeResponse,
             )
 
-            return response.output_text
+            if response.output_parsed is None:
+                raise AIClientError(
+                    "AI response could not be parsed."
+                )
+
+            return response.output_parsed
 
         except OpenAIError as exc:
             raise AIClientError(

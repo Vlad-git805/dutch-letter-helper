@@ -24,6 +24,4 @@ class LetterService:
             user_message=user_message
         )
 
-        return LetterAnalyzeResponse(
-            analysis=ai_response
-        )
+        return ai_response

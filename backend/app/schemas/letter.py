@@ -24,4 +24,10 @@ class LetterAnalyzeRequest(BaseModel):
 
 
 class LetterAnalyzeResponse(BaseModel):
-    analysis: str
+    summary: str
+    sender: str
+    sender_intent: str
+    important_details: list[str]
+    required_actions: list[str]
+    reply_required: bool
+    suggested_reply: str | None
